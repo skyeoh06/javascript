@@ -134,3 +134,121 @@ let uknownVariable;
 console.log(uknownVariable+4);
 >> NaN
 
+// write a program that asks the user to enter
+// a list of names. As long as the user enters
+//a name, we will store it in an array
+// But the moment the user enter !quit, we will stop asking for a name and then display the names with the longest length (meaning, the most number of alphabetds)
+
+// we use an array to store all the names
+names = []; // [] is an empty array
+
+// while loop is good for checking an arbitary condition
+
+n = prompt("Enter your name: ")
+while (n != '!quit') {
+  names.push(n); //append = add to the back
+  n = prompt("Enter your name: ")
+}
+
+// do a temp variable
+// this is known as a state variable
+let longestNameSoFar="";
+
+// do a for loop to print out everything inside the array
+// this is eqv. to Python's:
+// for aName in names:
+for (let aName of names) {
+  console.log(aName);
+  // check which of them has the longer length
+  if (aName.length > longestNameSoFar.length) {
+    longestNameSoFar = aName;
+  }
+}
+console.log(longestNameSoFar);
+>>
+Enter your name: skyliners
+Enter your name: python
+Enter your name: keith
+Enter your name: yuki
+Enter your name: ayu
+Enter your name: !quit
+skyliners
+python
+keith
+yuki
+ayu
+skyliners
+
+'use strict'
+
+// to declare a function
+// 1. what is the name of the function
+// 2. determine what is the result of the function
+//   -> will become the return value
+// 3. what are the arguments of the function does it need
+//  -> if any data is missing, then it must be passed in as arguments
+// 4. how do i get from the arguments to the return value
+
+function calculatePerimeterOfRectangle(width, height) {
+  let perimeter = width*2 + height*2;
+  return perimeter;
+}
+
+// step 1: 
+// what is the name of the function?
+// --> since the function is ask user to enter names
+// until he stops by typing '!quit', we can name the function keepAskingForNames()
+function keepAskingForNames(){
+  let names = [];
+  let newName = prompt("Enter a name: ");
+  while (newName != '!quit') {
+    names.push(newName);
+    newName = prompt("Enter a name: ");
+  }
+  return names; // names is supposed to be an array
+}
+
+// purpose: to find longest name in an array
+function findLongestName(names) {
+  let longestName = "";
+  for (let eachName of names) {
+    if (eachName.length > longestName.length) {
+      longestName = eachName;
+    }
+  }
+  return longestName;
+}
+
+// doSomething takes in one argument which is a function
+function doSomething(func) {
+  return func(); // use func as if it is a function
+}
+
+
+function funcCreator() {
+  return doSomething;
+}
+
+// 1. can be stored in a variable
+let x = keepAskingForNames;
+
+// we use an array to store all the names
+let names = []; // [] is an empty array
+
+
+names = funcCreator()(keepAskingForNames);
+
+// do a temp variable
+// this is known as a state variable
+let longestNameSoFar=findLongestName(names);
+
+console.log("Longest name is "+longestNameSoFar);
+>>
+Enter a name: skyliner
+Enter a name: qiqi
+Enter a name: cincin
+Enter a name: cinchao 
+Enter a name: baijinting
+Enter a name: python
+Enter a name: !quit
+Longest name is baijinting

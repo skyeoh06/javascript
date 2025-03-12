@@ -185,3 +185,157 @@ let product = {
 
 console.log(product);
 >> { sku: '1212A', price: 60, name: 'Surigcal Mask' }
+
+
+#functions
+  // def add_two(n1, n2):
+//   return n1+n2
+
+function addTwo(n1, n2) {
+  return n1+n2;
+} // instead of indentation, curly brackets
+
+function doSomething(foobar) {
+  foobar(); // call foobar as if it is a function
+}
+
+function getDivide() {
+
+  // The following three lines does the same thing - it returns an annoymous function that takes in three arugments and return their average:
+  // return (x,y)=>x/y;
+  // eqv to lambda x,y:x/y
+  
+  // return (x,y)=> {
+  //   return x/y;
+  // }
+
+  return function(x,y) {
+    return x/y;
+  }
+}
+
+console.log(addTwo(3,4));
+>> 7
+
+// // HOF (or function as first class citizen)
+// // #1 can store a function in a variable
+let x = addTwo;
+console.log(x(2,2))
+>> 4
+doSomething(()=>console.log("hi"));
+>> hi
+
+let y = getDivide();
+console.log(y(4,2))
+>> 2
+
+// a lambda in JavaScript can be multiple lines
+let findAverage = (n1,n2,n3)=>{
+  let total = n1+n2+n3;
+  return total/3;
+}
+
+/*
+The above can be written as:
+function findAverage(n1,n2,n3){
+  let total = n1+n2+n3;
+  return total/3;
+}
+*/
+
+#loops
+/*
+PYTHON: print numbers from 0 to 9
+
+for i in range(0,10,1):
+  print(i)
+*/
+
+// for ( <init> ; <cond>; <increment>)
+// 1. we do <init> once and only once before the loop starts
+// 2. we check if <cond> is true
+// 3. if <cond> is true, proceed to the loop; else end
+// 4. once all lines in the loop finished, go to the <increment> part
+// 5. go step 2
+for(let i=0; i<10; ++i) {
+  console.log(i);
+  console.log(i*2);
+  console.log(i*3);
+}
+console.log("Done");
+>>
+0
+0
+0
+1
+2
+3
+2
+4
+6
+3
+6
+9
+4
+8
+12
+5
+10
+15
+6
+12
+18
+7
+14
+21
+8
+16
+24
+9
+18
+27
+Done
+
+/*
+let i=0; <init>
+while (i< 10) { <cond>
+  console.log(i);
+  i=i+1;<incr>
+}
+*/
+
+let names=['John', 'Cindy', 'Mary', 'Benedict'];
+
+// for n in names:
+//  print(n)
+
+// REMINDER: for...OF
+for (let n of names) {
+  console.log(n);
+}  
+>>
+John
+Cindy
+Mary
+Benedict
+
+// Ask user for pos number
+x = prompt("Enter a number")
+x = parseInt(x);
+while (x<1) {
+  console.log("Please enter a pos. number")
+  x = prompt("Enter a number")
+  x = parseInt(x);
+}
+console.log("You entered a positive number")
+>>
+Enter a number10
+You entered a positive number
+
+Enter a number-1
+Please enter a pos. number
+Enter a number0
+Please enter a pos. number
+Enter a number13
+You entered a positive number
+

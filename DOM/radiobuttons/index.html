@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div>
+      <h1>Enter your particulars</h1>
+      <input type="text" name="customer-name" id="customer-name"/>
+    </div>
+    <h1>What do eat for lunch?</h1>
+    <div>
+      <input type="radio" name="food" value="chicken-rice"/>Chicken Rice
+      <input type="radio" name="food" value="mcchicken"/>McChicken
+      <input type="radio" name="food" value="yong-tau-foo"/>Yong Tau Foo
+    </div>
+
+    <div>
+      <h1>What kind of seating do I want</h1>
+      <input type="radio" name="seating" value="aircon"/>Aircon Seating
+      <input type="radio" name="seating" value="outdoors"/>Outdoors
+    </div>
+
+    <h1>What other options do I want with Lunch?</h1>
+    <div>
+      <input type="checkbox" name="options" value="drink"/>Drink
+      <input type="checkbox" name="options" value="ice-cream"/>Icecream<
+      <input type="checkbox" name="options" value="dessert"/>Dessert
+      <input type="checkbox" name="options" value="soup"/>Soup
+    </div>
+
+    <div>
+      <h1>How did you hear about us?</h1>
+      <select name="hearabout" id="hearabout">
+        <option>From friends</option>
+        <option>From social media</option>
+        <option>From TV adverts</option>
+        <option>From newspaper</option>
+      </select>
+    </div>
+
+    <div>
+      <h1>Enter any comments</h1>
+      <textarea name="comments" id="comments"></textarea>
+    </div>
+
+    <button id="submit-btn">Submit</button>
+    <script src="func.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

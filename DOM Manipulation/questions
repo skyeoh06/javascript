@@ -1,1 +1,26 @@
+QUESTION 1
+function getTitleText(){
+  // let t = document.getElementById('title');
+  let t = document.querySelector('#title')
+  return t.innerText;
+}
+
+function getFooterHTML() {
+  let t = document.getElementById('footer');
+  return t.innerHTML;
+}
+
+function changeGoodbyeText() {
+  let e = document.querySelector("#goodbye");
+  e.innerText="Regards,"
+}
+
+
+QUESTION 2
+function changeColor()
+{
+  let box = document.querySelector('#the-box');
+  box.style.backgroundColor="rgb(76, 143, 158)";
+}
+
 
